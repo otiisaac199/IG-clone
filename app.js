@@ -1,4 +1,4 @@
-let jSON = [
+const skits = [
   {
     id: 0,
     photo: "Images/IMG-20220313-WA0023.jpg",
@@ -29,16 +29,40 @@ let jSON = [
   },
 ];
 
-console.log(jSON);
+console.log(skits);
 
 let postImgCont = document.querySelector(".post-img-cont");
 
-let postContent = jSON.map((i) => {
+let postContent = skits.map((i) => {
   return `<div class="post-content-img-wrapper"> 
     <div class="post-main-img"> 
-      <img src="${i.photo}" alt="" />
+    <img src="${i.photo}" class="post-main-image" alt="" />
     </div>
   </div>`;
 });
-
 postImgCont.innerHTML = postContent.join(" ");
+
+let postValue = document.querySelector(".post-value");
+postValue.textContent = skits.length;
+
+// post js
+document.querySelectorAll(".post-main-img").forEach((img) => {
+  img.addEventListener("click", () => {
+    console.log(img);
+    // let a = document.createElement(a);
+    // a.appendChild(img);
+  });
+});
+
+// following
+// let fol = document.querySelector(".followers");
+// let foll = document.querySelector(".following");
+// let fValue1 = document.querySelector(".f-fvalue1");
+// let fValue2 = document.querySelector(".f-fvalue2");
+
+// fValue1.innerHTML = fol;
+// fValue2.innerHTML = foll;
+const arr = [1, 2, 3];
+arr[10] = "foo";
+
+console.log(arr.length);
